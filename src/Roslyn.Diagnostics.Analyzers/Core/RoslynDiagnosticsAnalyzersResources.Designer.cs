@@ -179,6 +179,24 @@ namespace Roslyn.Diagnostics.Analyzers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The member {0} is static member of a mutable type, which is forbidden in tests. Use the appropriate xUnit support, such as initalization in the constructor, or a fixture. If the type is actually immutable, then update the analyzer to say so..
+        /// </summary>
+        internal static string DoNotUseSharedMutableStateInTestsMessage {
+            get {
+                return ResourceManager.GetString("DoNotUseSharedMutableStateInTestsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do not use shared mutable state in tests.
+        /// </summary>
+        internal static string DoNotUseSharedMutableStateInTestsTitle {
+            get {
+                return ResourceManager.GetString("DoNotUseSharedMutableStateInTestsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to #N/A.
         /// </summary>
         internal static string InvokeTheCorrectPropertyToEnsureCorrectUseSiteDiagnosticsDescription {

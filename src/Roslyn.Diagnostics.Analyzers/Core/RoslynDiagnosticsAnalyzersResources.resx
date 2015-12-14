@@ -117,7 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-
   <data name="UseSpecializedCollectionsEmptyEnumerableTitle" xml:space="preserve">
     <value>Use SpecializedCollections.EmptyEnumerable()</value>
   </data>
@@ -219,5 +218,11 @@
   </data>
   <data name="CategoryUsage" xml:space="preserve">
     <value>Usage</value>
+  </data>
+  <data name="DoNotUseSharedMutableStateInTestsMessage" xml:space="preserve">
+    <value>The member {0} is static member of a mutable type, which is forbidden in tests. Use the appropriate xUnit support, such as initalization in the constructor, or a fixture. If the type is actually immutable, then update the analyzer to say so.</value>
+  </data>
+  <data name="DoNotUseSharedMutableStateInTestsTitle" xml:space="preserve">
+    <value>Do not use shared mutable state in tests</value>
   </data>
 </root>
