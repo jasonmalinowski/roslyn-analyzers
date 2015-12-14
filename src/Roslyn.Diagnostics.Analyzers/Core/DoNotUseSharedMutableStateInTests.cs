@@ -27,7 +27,13 @@ namespace Roslyn.Diagnostics.Analyzers
 
         public override void Initialize(AnalysisContext context)
         {
-            context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Field);
+            context.RegisterCompilationStartAction(c =>
+            {
+                if (c.Compilation.AssemblyName.StartsWith("Roslyn.Services"))
+                {
+                    c.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.Field);
+                }
+            });
         }
 
         private void AnalyzeSymbol(SymbolAnalysisContext context)
